@@ -17,7 +17,7 @@ setup(name='savepoint',
     version=version,
     description="A context manager that creates savepoints",
     long_description="""
-A context manager that creates savepoints, avoiding recalculting expensive
+A context manager that creates savepoints, avoiding recalculating expensive
 parts of the code.
 
 An example:
@@ -37,8 +37,8 @@ An example:
 
     print a, b, c
 
-The first time the code is ran the `with` block is executed, and the modifed 
-scope is pickled to `stuff.p`. Subsequent calls will update the global scope
+The first time the code is ran the ``with`` block is executed, and the modifed 
+scope is pickled to ``stuff.p``. Subsequent calls will update the global scope
 from the pickle file, and skip the block completely.
     """,
     classifiers=[
@@ -47,7 +47,7 @@ from the pickle file, and skip the block completely.
     keywords='context manager savepoint hack',
     author='Roberto De Almeida',
     author_email='roberto@dealmeida.net',
-    url='',
+    url='https://github.com/robertodealmeida/savepoint',
     license='MIT',
     packages=find_packages('src'),
     package_dir = {'': 'src'},include_package_data=True,
