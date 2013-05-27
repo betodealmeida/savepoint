@@ -1,7 +1,7 @@
 import sys
 import inspect
 import os.path
-import pickle
+import cPpickle as pickle
 
 
 class SavePoint(object):
