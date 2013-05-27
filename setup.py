@@ -38,6 +38,8 @@ An example:
 
     print a, b, c
 
+We now run the script twice:
+
 .. code-block:: bash
 
     $ python script.py
