@@ -18,7 +18,8 @@ setup(name='savepoint',
     description="A context manager that creates savepoints",
     long_description="""
 A context manager that creates savepoints, avoiding recalculating expensive
-parts of the code.
+parts of the code. Useful if you're running a script several times while 
+developing it.
 
 An example:
 
@@ -37,16 +38,28 @@ An example:
 
     print a, b, c
 
+.. code-block:: bash
+
+    $ python script.py
+    doing stuff
+    20 20 30
+
+    $ python script.py
+    20 20 30
+
 The first time the code is ran the ``with`` block is executed, and the modifed 
-scope is pickled to ``stuff.p``. Subsequent calls will update the global scope
+scope is pickled to ``stuff.p``. Subsequent runs will update the global scope
 from the pickle file, and skip the block completely.
+
+Note that only changes in the scope are stored, but not file modifications and
+other side effects of the block.
     """,
     classifiers=[
       # Get strings from http://pypi.python.org/pypi?%3Aaction=list_classifiers
     ],
     keywords='context manager savepoint hack',
-    author='Roberto De Almeida',
-    author_email='roberto@dealmeida.net',
+    author='Roberto De Almeida, Marinexplore Inc.',
+    author_email='rob@marinexplore.com',
     url='https://github.com/robertodealmeida/savepoint',
     license='MIT',
     packages=find_packages('src'),
