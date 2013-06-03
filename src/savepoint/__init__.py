@@ -1,14 +1,15 @@
 import sys
 import inspect
 import os.path
-import cPpickle as pickle
+import cPickle as pickle
 
 
 class SavePoint(object):
 
-    def __init__(self, path):
+    def __init__(self, path, validate_input=False):
         # where we'll store the modified scope
         self.path = path
+        self.validate_input = False
 
     def __enter__(self):
         # get caller globals()
